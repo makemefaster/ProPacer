@@ -276,7 +276,7 @@
 
             try {
                 // Call Lemon Squeezy API
-                const response = await fetch('https://api.lemonsqueezy.com/v1/licenses/activate', {
+                const response = await fetch('/api/licenses/activate', {
                     method: 'POST',
                     headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
                     body: JSON.stringify({ license_key: key, instance_name: 'Pro Pacer Web' })
