@@ -276,8 +276,8 @@
 
             try {
                 // Call Lemon Squeezy API
-                const response = await fetch('/api/licenses/activate', {
-                    method: 'POST',
+                const response = await fetch('/.netlify/functions/activate', {
+                  method: 'POST',
                     headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
                     body: JSON.stringify({ license_key: key, instance_name: 'Pro Pacer Web' })
                 });
