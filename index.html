@@ -391,12 +391,12 @@
             }
         }
 
-        function handleLap() {
+function handleLap() {
             lastLapBigDisplay.classList.remove("pulsing-text");
             let finalLapTimeMs = lapTimeElapsed;
             let finalLapStr = formatFullTime(finalLapTimeMs);
+            
             let skinStr = skinDisplay.innerText;
-            let skinValNum = parseFloat(skinStr);
 
             let displayTxt = skinStr;
             let speakTxt = skinStr;
