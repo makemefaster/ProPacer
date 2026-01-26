@@ -5,14 +5,15 @@ exports.handler = async function(event, context) {
   }
 
   try {
-    // We talk to Lemon Squeezy directly from the server (No CORS, No Blocks)
+    // The "Language Barrier" Fix:
+    // We must tell Lemon Squeezy we are sending JSON data.
     const response = await fetch("https://api.lemonsqueezy.com/v1/licenses/activate", {
       method: "POST",
       headers: { 
-        "Content-Type": "application/x-www-form-urlencoded",
-        "Accept": "application/json"
+        "Accept": "application/json",
+        "Content-Type": "application/json" // <--- This was the fix!
       },
-      body: event.body
+      body: event.body // Pass the JSON straight through
     });
 
     const data = await response.json();
